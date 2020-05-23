@@ -15,7 +15,7 @@ let firstNum;
 let firstOperation = true;
 let currTotal = 0;
 
-let z;
+let x;
 
 function checkOperation () {
     if (firstOperation){
@@ -51,7 +51,7 @@ function divide (a, b) {
     if (b == []) {
         return;
     }
-    currTotal = (+a / +b).toFixed(4);
+    currTotal = (+a / +b);
 }
 
 function operate(command) {
@@ -77,7 +77,7 @@ function operate(command) {
         firstOperation = false;
     }
 
-    else if (command == "÷") {
+    else if (command == "/") {
         divide(firstNum, k);
         firstOperation = false;
     }
@@ -95,7 +95,7 @@ operator.forEach(key => key.addEventListener('click', function() {
     }
 
     operate(this.innerHTML);
-    z = this.innerHTML;
+    x = this.innerHTML;
 
     if (!(calcScreen.value.includes(this.innerHTML))) {
         addToDisplay(this.innerHTML);
@@ -108,7 +108,7 @@ operator.forEach(key => key.addEventListener('click', function() {
 }))
 
 equalsButton.addEventListener('click', () => {
-    operate(z);
+    operate(x);
 })
 
 dotButton.addEventListener('click', function() {

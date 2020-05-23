@@ -5,7 +5,6 @@ let numbers = Array.from(document.querySelectorAll('button.calc-num'));
 
 let deleteButton = document.querySelector('.calc-delete');
 let clearButton = document.querySelector('#calc-clear');
-let dotButton = document.querySelector('#dot');
 let equalsButton = document.querySelector('#calc-total');
 // let addButton = document.querySelector('#addition');
 // let subtractButton = document.querySelector('#subtraction');
@@ -109,12 +108,6 @@ operator.forEach(key => key.addEventListener('click', function() {
 
 equalsButton.addEventListener('click', () => {
     operate(x);
-})
-
-dotButton.addEventListener('click', function() {
-    if (!(calcScreen.value.includes(".")) || !(operation.includes("."))) {
-        addToDisplay(this.innerHTML);
-    }
 })
 
 deleteButton.addEventListener('click', () => {
